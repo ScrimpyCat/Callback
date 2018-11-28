@@ -82,7 +82,6 @@ defmodule Callback do
 
       Allowed in guard tests.
     """
-    @spec is_callback(term) :: boolean
     defguard is_callback(callback)
         when is_tuple(callback)
             and ((tuple_size(callback) == 3 and is_atom(elem(callback, 0)) and is_atom(elem(callback, 1)) and (is_integer(elem(callback, 2)) or is_list(elem(callback, 2))))
